@@ -1,10 +1,9 @@
-package com.caloriecounter.models;
+package com.chcounter.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import java.time.LocalTime;
 
 /**
  * Created by regnisalram on 1/2/17.

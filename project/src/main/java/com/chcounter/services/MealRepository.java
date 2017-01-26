@@ -1,8 +1,6 @@
-package com.caloriecounter.services;
+package com.chcounter.services;
 
-import com.caloriecounter.models.Meal;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import com.chcounter.models.Meal;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**

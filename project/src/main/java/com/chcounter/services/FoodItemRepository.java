@@ -1,6 +1,6 @@
-package com.caloriecounter.services;
+package com.chcounter.services;
 
-import com.caloriecounter.models.FoodItem;
+import com.chcounter.models.FoodItem;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

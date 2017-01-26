@@ -1,12 +1,12 @@
-package com.caloriecounter;
+package com.chcounter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CalorieCounterApplication {
+public class CHCounterApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalorieCounterApplication.class, args);
+		SpringApplication.run(CHCounterApplication.class, args);
 	}
 }

@@ -1,8 +1,8 @@
-package com.caloriecounter.controllers;
+package com.chcounter.controllers;
 
-import com.caloriecounter.models.Meal;
-import com.caloriecounter.models.Type;
-import com.caloriecounter.services.MealService;
+import com.chcounter.models.Meal;
+import com.chcounter.models.Type;
+import com.chcounter.services.MealService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,7 +1,7 @@
-package com.caloriecounter.services;
+package com.chcounter.services;
 
-import com.caloriecounter.models.Meal;
-import com.caloriecounter.models.Type;
+import com.chcounter.models.Meal;
+import com.chcounter.models.Type;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

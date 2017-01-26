@@ -1,4 +1,4 @@
-package com.caloriecounter;
+package com.chcounter;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

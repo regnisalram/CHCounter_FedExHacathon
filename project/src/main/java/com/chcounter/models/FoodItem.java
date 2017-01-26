@@ -1,4 +1,4 @@
-package com.caloriecounter.models;
+package com.chcounter.models;
 
 import javax.persistence.*;
 
