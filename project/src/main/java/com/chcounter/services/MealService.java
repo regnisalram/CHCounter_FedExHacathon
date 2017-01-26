@@ -1,5 +1,7 @@
 package com.chcounter.services;
 
+import com.chcounter.models.FoodItem;
+import com.chcounter.models.FoodOption;
 import com.chcounter.models.Meal;
 import com.chcounter.models.Type;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 /**
  * Created by regnisalram on 1/9/17.
@@ -18,10 +21,20 @@ public class MealService {
 
     private TypeRepository typeRepository;
 
+    private FoodItemRepository foodItemRepository;
+
+    private FoodOptionRepository foodOptionRepository;
+
     @Autowired
-    public MealService(MealRepository mealRepository, TypeRepository typeRepository) {
+    public MealService(MealRepository mealRepository, TypeRepository typeRepository, FoodItemRepository foodItemRepository, FoodOptionRepository foodOptionRepository) {
         this.mealRepository = mealRepository;
         this.typeRepository = typeRepository;
+        this.foodItemRepository = foodItemRepository;
+        this.foodOptionRepository = foodOptionRepository;
+    }
+
+    public List<FoodOption> listAllFoodOption() {
+        return (List) foodOptionRepository.findAll();
     }
 
     public Iterable<Meal> list() {
@@ -34,6 +47,18 @@ public class MealService {
 
     public void create(String date, String time, Type type, String description) {
         mealRepository.save(new Meal(LocalDate.parse(date), LocalTime.parse(time), type, description));
+    }
+
+    public void addIngredient(Meal meal, FoodOption foodOption, int quantity) {
+        foodItemRepository.save(new FoodItem(quantity, meal, foodOption));
+    }
+
+    public void passIngredients(Meal meal, List<FoodItem> foodItemList) {
+        for (FoodItem foodItem : foodItemList) {
+            meal.foodItems.add(foodItem);
+            foodItemRepository.save(foodItem);
+            foodItemList.remove(foodItem);
+        }
     }
 
     public Meal getMeal(long id) {

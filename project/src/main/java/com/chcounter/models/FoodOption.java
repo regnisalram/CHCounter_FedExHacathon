@@ -13,7 +13,7 @@ public class FoodOption {
     private long id;
 
     String name;
-    long cHContent;
+    float cHContent;
     String foodOptionType;
 
     public FoodOption() {
