@@ -49,7 +49,7 @@ public class MainController {
                              @RequestParam("typeOfFood") Type type,
                              @RequestParam("description") String description) {
         service.create(date, time, type, description);
-        return "redirect:/add/ingredients";
+        return "redirect:/add";
     }
 
     @GetMapping("/add/ingredients")
