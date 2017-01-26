@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 
 /**
  * Created by regnisalram on 1/2/17.
@@ -25,14 +26,18 @@ public class Meal {
     @DateTimeFormat(pattern = "HH-mm")
     LocalTime timeAdded;
 
-    @OneToOne (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "type_id")
     Type typeOfFood;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "meal")
+    public List<FoodItem> foodItems;
 
     String description;
     int calories;
 
-    public Meal() {}
+    public Meal() {
+    }
 
     public Meal(LocalDate dateAdded, LocalTime timeAdded, Type typeOfFood, String description, int calories) {
         this.dateEntered = LocalDateTime.now();
