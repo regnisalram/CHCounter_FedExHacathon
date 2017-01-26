@@ -4,14 +4,14 @@
 
     <div class="container theme-showcase" role="main">
         <div class="jumbotron">
-            <h1>Calorie Counter</h1>
+            <h1>CH Counter</h1>
         </div>
         <table class="table table-striped">
             <thead>
                 <th colspan="2">Date and Time</th>
                 <th>Type</th>
                 <th>Description</th>
-                <th>Total Calories</th>
+                <th>Total CH</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </thead>
@@ -32,22 +32,22 @@
         </table>
         <ul class="list-group">
             <li class="list-group-item">
-                Total Calories:
+                Total CH:
             </li>
             <li class="list-group-item">
                 Number of meals:
             </li>
         </ul>
-        <div class="page-header">
-            <h3>Summary table</h3>
-        </div>
-        <table class="table table-striped">
-            <thead>
-                <th>Type</th>
-                <th>No. of meals</th>
-                <th>Total Calories</th>
-            </thead>
-        </table>
+        <!--<div class="page-header">-->
+            <!--<h3>Summary table</h3>-->
+        <!--</div>-->
+        <!--<table class="table table-striped">-->
+            <!--<thead>-->
+                <!--<th>Type</th>-->
+                <!--<th>No. of meals</th>-->
+                <!--<th>Total Calories</th>-->
+            <!--</thead>-->
+        <!--</table>-->
         <a th:href="@{'/add'}"><button type="button" class="btn btn-lg btn-primary">Add meal</button></a>
     </div>
 </div>

@@ -6,6 +6,14 @@ select {
     font-size: larger;
 }
 
+.jumbotron {
+    background-image: url("../../static/images/ch_chem.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 60%;
+}
+
+
 /*a {*/
     /*color: inherit;*/
 /*}*/
