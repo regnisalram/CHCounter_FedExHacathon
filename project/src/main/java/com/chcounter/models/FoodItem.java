@@ -2,6 +2,8 @@ package com.chcounter.models;
 
 import javax.persistence.*;
 
+import static java.lang.Math.round;
+
 @Entity
 public class FoodItem {
 
@@ -22,8 +24,6 @@ public class FoodItem {
     public FoodItem() {
     }
 
-    ;
-
     public FoodItem(int quantity, Meal meal, FoodOption foodOption) {
         this.quantity = quantity;
         this.meal = meal;
@@ -33,5 +33,11 @@ public class FoodItem {
     public FoodItem(int quantity, FoodOption foodOption) {
         this.quantity = quantity;
         this.foodOption = foodOption;
+    }
+
+    public int calcFoodItemCH(int quantity) {
+        int foodItemCH;
+        foodItemCH = round(this.foodOption.cHContent * quantity * this.meal.getTypeOfFood().percentOfDaily);
+        return foodItemCH;
     }
 }
