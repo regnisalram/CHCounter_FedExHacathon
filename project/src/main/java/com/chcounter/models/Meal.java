@@ -52,7 +52,7 @@ public class Meal {
         this.timeAdded = timeAdded;
         this.typeOfFood = typeOfFood;
         this.description = description;
-        this.carbohydrate = carbohydrate;
+        this.carbohydrate = 0;
     }
 
     public LocalDate getDateAdded() {
