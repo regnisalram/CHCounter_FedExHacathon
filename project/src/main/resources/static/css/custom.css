@@ -13,6 +13,15 @@ select {
     background-size: 60%;
 }
 
+.jumbotron.ingredients{
+    background-image: url("../../static/images/ingredients.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 30%;
+}
+
+
+
 
 /*a {*/
     /*color: inherit;*/
