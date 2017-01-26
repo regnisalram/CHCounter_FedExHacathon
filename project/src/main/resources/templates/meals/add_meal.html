@@ -23,17 +23,17 @@
                             th:text="${type.description}"></option>
                 </select>
             </div>
-            <div class="form-group inline">
-                <label for="number-input" class="col-2 col-form-label"><h4>Calorie Count</h4></label>
-                <input class="form-control" type="number" id="number-input" th:field="*{carbohydrate}"/>
-            </div>
+            <!--<div class="form-group inline">-->
+                <!--<label for="number-input" class="col-2 col-form-label"><h4>Calorie Count</h4></label>-->
+                <!--<input class="form-control" type="number" id="number-input" th:field="*{carbohydrate}"/>-->
+            <!--</div>-->
             <div class="form-group">
                 <label for="meal_description"><h4>Description</h4></label>
                 <textarea id="meal_description" class="form-control" name="meal_description" placeholder="What did you eat exactly?" rows="5" th:field="*{description}"></textarea>
             </div>
             <div>
                 <button type="submit" class="btn btn-primary">
-                    Submit
+                    Add ingredients
                 </button>
             </div>
         </form>

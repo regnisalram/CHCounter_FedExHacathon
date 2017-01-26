@@ -39,6 +39,13 @@ public class Meal {
     public Meal() {
     }
 
+    public Meal(LocalDate dateAdded, LocalTime timeAdded, Type typeOfFood, String description) {
+        this.dateAdded = dateAdded;
+        this.timeAdded = timeAdded;
+        this.typeOfFood = typeOfFood;
+        this.description = description;
+    }
+
     public Meal(LocalDate dateAdded, LocalTime timeAdded, Type typeOfFood, String description, int carbohydrate) {
         this.dateEntered = LocalDateTime.now();
         this.dateAdded = dateAdded;

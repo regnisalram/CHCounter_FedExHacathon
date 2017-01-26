@@ -32,8 +32,8 @@ public class MealService {
         return typeRepository.findAll();
     }
 
-    public void create(String date, String time, Type type, String description, Integer calories) {
-        mealRepository.save(new Meal(LocalDate.parse(date), LocalTime.parse(time), type, description, calories));
+    public void create(String date, String time, Type type, String description) {
+        mealRepository.save(new Meal(LocalDate.parse(date), LocalTime.parse(time), type, description));
     }
 
     public Meal getMeal(long id) {

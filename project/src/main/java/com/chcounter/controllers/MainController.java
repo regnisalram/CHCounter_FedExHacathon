@@ -38,10 +38,14 @@ public class MainController {
     public String createMeal(@RequestParam("dateAdded") String date,
                              @RequestParam("timeAdded") String time,
                              @RequestParam("typeOfFood") Type type,
-                             @RequestParam("description") String description,
-                             @RequestParam("calories") Integer calories) {
-        service.create(date, time, type, description, calories);
-        return "redirect:/";
+                             @RequestParam("description") String description) {
+        service.create(date, time, type, description);
+        return "redirect:/add/ingredients";
+    }
+
+    @GetMapping("/add/ingredients")
+    public String addIngredients() {
+        return "meals/add_ingredients";
     }
 
     @GetMapping("/{id}/edit")
