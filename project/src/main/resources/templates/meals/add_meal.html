@@ -1,0 +1,42 @@
+<html layout:decorator="layout" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+
+    <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <h1>Add a meal</h1>
+        </div>
+        <form method="post" th:action="@{'/create'}" th:object="${meal}" role="form">
+            <div class="form-group inline">
+                <label for="date-input" class="col-2 col-form-label"><h4>Date</h4></label>
+                <input class="form-control mx-sm-3" type="date" value="2017-01-01" id="date-input" th:field="*{dateAdded}"/>
+            </div>
+            <div class="form-group inline">
+                <label for="time-input" class="col-2 col-form-label"><h4>Time</h4></label>
+                <input class="form-control mx-sm-3" type="time" value="13:45:00" id="time-input" th:field="*{timeAdded}"/>
+            </div>
+            <div class="form-group">
+                <label class="mr-sm-2" for="formSelect"><h4>Type of Meal</h4></label>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="formSelect" th:field="*{typeOfFood}">
+                    <option th:each="type : ${types}"
+                            th:value="${type.code}"
+                            th:text="${type.description}"></option>
+                </select>
+            </div>
+            <div class="form-group inline">
+                <label for="number-input" class="col-2 col-form-label"><h4>Calorie Count</h4></label>
+                <input class="form-control" type="number" id="number-input" th:field="*{calories}"/>
+            </div>
+            <div class="form-group">
+                <label for="meal_description"><h4>Description</h4></label>
+                <textarea id="meal_description" class="form-control" name="meal_description" placeholder="What did you eat exactly?" rows="5" th:field="*{description}"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</html>

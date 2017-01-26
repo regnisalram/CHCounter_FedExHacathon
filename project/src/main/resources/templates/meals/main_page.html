@@ -1,0 +1,54 @@
+<html layout:decorator="layout" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+
+    <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <h1>Calorie Counter</h1>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <th colspan="2">Date and Time</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Total Calories</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                <tr data-th-each="meal : ${meals}">
+                    <td data-th-text="${meal.dateAdded}"></td>
+                    <td data-th-text="${meal.timeAdded}"></td>
+                    <td data-th-text="${meal.typeOfFood.getDescription()}"></td>
+                    <td data-th-text="${meal.description}"></td>
+                    <td data-th-text="${meal.calories}"></td>
+                    <td>
+                        <a th:href="@{'/{id}/edit'(id=${meal.getId()})}" class="edit">&#128221;</a>
+                    </td><td>
+                        <a th:href="@{'/{id}/delete'(id=${meal.getId()})}" class="edit">&#128465;</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="list-group">
+            <li class="list-group-item">
+                Total Calories:
+            </li>
+            <li class="list-group-item">
+                Number of meals:
+            </li>
+        </ul>
+        <div class="page-header">
+            <h3>Summary table</h3>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <th>Type</th>
+                <th>No. of meals</th>
+                <th>Total Calories</th>
+            </thead>
+        </table>
+        <a th:href="@{'/add'}"><button type="button" class="btn btn-lg btn-primary">Add meal</button></a>
+    </div>
+</div>
+</html>
