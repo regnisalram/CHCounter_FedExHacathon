@@ -46,7 +46,7 @@ public class MealService {
         meal.setTimeAdded(LocalTime.parse(time));
         meal.setTypeOfFood(type);
         meal.setDescription(description);
-        meal.setCalories(calories);
+        meal.setCarbohydrate(calories);
         mealRepository.save(meal);
     }
 

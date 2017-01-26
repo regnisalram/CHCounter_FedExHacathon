@@ -34,18 +34,18 @@ public class Meal {
     public List<FoodItem> foodItems;
 
     String description;
-    int calories;
+    int carbohydrate;
 
     public Meal() {
     }
 
-    public Meal(LocalDate dateAdded, LocalTime timeAdded, Type typeOfFood, String description, int calories) {
+    public Meal(LocalDate dateAdded, LocalTime timeAdded, Type typeOfFood, String description, int carbohydrate) {
         this.dateEntered = LocalDateTime.now();
         this.dateAdded = dateAdded;
         this.timeAdded = timeAdded;
         this.typeOfFood = typeOfFood;
         this.description = description;
-        this.calories = calories;
+        this.carbohydrate = carbohydrate;
     }
 
     public LocalDate getDateAdded() {
@@ -76,12 +76,12 @@ public class Meal {
         this.description = description;
     }
 
-    public int getCalories() {
-        return calories;
+    public int getCarbohydrate() {
+        return carbohydrate;
     }
 
-    public void setCalories(int calories) {
-        this.calories = calories;
+    public void setCarbohydrate(int carbohydrate) {
+        this.carbohydrate = carbohydrate;
     }
 
     public long getId() {
