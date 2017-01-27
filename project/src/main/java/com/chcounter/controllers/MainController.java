@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,13 +20,12 @@ import java.util.List;
 public class MainController {
 
     private MealService service;
-    private List<FoodItem> foodItemList;
+    ArrayList<FoodItem> foodItemList;
     public long mealId;
 
     @Autowired
     public MainController(MealService service) {
         this.service = service;
-        foodItemList = new ArrayList<>();
     }
 
     @RequestMapping(value = {"", "/"})
@@ -49,18 +49,19 @@ public class MainController {
                              @RequestParam("typeOfFood") Type type,
                              @RequestParam("description") String description) {
         service.create(date, time, type, description);
-        return "redirect:/add";
+        return "redirect:/add/ingredients";
     }
 
     @GetMapping("/add/ingredients")
     public String addIngredients(Model model) {
+        foodItemList = new ArrayList<FoodItem>();
         model.addAttribute("foodItemList", foodItemList);
         model.addAttribute("foodOptionsList", service.listAllFoodOption());
         return "meals/add_ingredients";
     }
 
     @PostMapping("/create/ingredients")
-    public String createIngredients(@ModelAttribute List<FoodItem> foodItemList, @ModelAttribute int mealId) {
+    public String createIngredients(@ModelAttribute ArrayList<FoodItem> foodItemList, @ModelAttribute int mealId) {
         this.foodItemList = foodItemList;
         service.passIngredients(service.getMeal(mealId), foodItemList);
         return "redirect:/create";

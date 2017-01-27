@@ -33,8 +33,8 @@ public class MealService {
         this.foodOptionRepository = foodOptionRepository;
     }
 
-    public List<FoodOption> listAllFoodOption() {
-        return (List) foodOptionRepository.findAll();
+    public Iterable<FoodOption> listAllFoodOption() {
+        return foodOptionRepository.findAll();
     }
 
     public Iterable<Meal> list() {
