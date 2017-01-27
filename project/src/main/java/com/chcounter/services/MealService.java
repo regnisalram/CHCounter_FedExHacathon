@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class MealService {
 
-    private MealRepository mealRepository;
+    public MealRepository mealRepository;
 
     private TypeRepository typeRepository;
 
@@ -65,13 +65,13 @@ public class MealService {
         return mealRepository.findOne(id);
     }
 
-    public void update(Long id, String date, String time, Type type, String description, Integer calories) {
+    public void update(Long id, String date, String time, Type type, String description, Integer carbohydrate) {
         Meal meal = mealRepository.findOne(id);
         meal.setDateAdded(LocalDate.parse(date));
         meal.setTimeAdded(LocalTime.parse(time));
         meal.setTypeOfFood(type);
         meal.setDescription(description);
-        meal.setCarbohydrate(calories);
+        meal.setCarbohydrate(carbohydrate);
         mealRepository.save(meal);
     }
 
