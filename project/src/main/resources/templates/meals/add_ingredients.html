@@ -7,13 +7,13 @@
             <h1>Add everything you had</h1>
         </div>
         <!--<form method="post" th:action="@{'/create'}" th:object="${meal}" role="form">-->
-        <form method="post" th:object="${foodItem}" role="form">
+        <form method="post" th:object="${foodItemList}" role="form">
             <div class="form-group">
                 <label class="mr-sm-2" for="formSelect"><h4>Ingredient</h4></label>
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="formSelect" th:field="*{foodoption_id}">
-                    <option th:each="type : ${types}"
-                            th:value="${type.code}"
-                            th:text="${type.description}"></option>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="formSelect" th:field="*{foodOption}">
+                    <option th:each="foodOption : ${foodOptionsList}"
+                            th:value="${foodOption.id}"
+                            th:text="${foodOption.name}"></option>
                 </select>
             </div>
             <!--<div class="form-group inline">-->
