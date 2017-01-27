@@ -37,7 +37,7 @@ public class FoodItem {
 
     public int calcFoodItemCH(int quantity) {
         int foodItemCH;
-        foodItemCH = round(this.foodOption.cHContent * quantity * this.meal.getTypeOfFood().percentOfDaily);
+        foodItemCH = round(this.foodOption.cHContent / 100 * quantity * this.meal.getTypeOfFood().percentOfDaily);
         return foodItemCH;
     }
 }
